@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table
+        {
+
+        }
+        td,button
+        {
+            width: 60px;
+            height: 30px;
+        }
+        input
+        {
+            width: 250px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <td colspan="4"><input type="text" value="0" id="dat" onclick="lammoi()"></td>
+    </tr>
+    <tr>
+        <td ><button onclick="gtnhap('(')" style="background:dimgrey">(</button></td>
+        <td><button onclick="gtnhap(')')"  style="background:dimgrey">)</button></td>
+        <td><button onclick="gtnhap('%')"  style="background:dimgrey">%</button></td>
+        <td><button onclick="lammoi('AC')"  style="background:dimgrey">AC</button></td>
+    </tr>
+    <tr>
+        <td><button onclick="gtnhap(7)">7</button></td>
+        <td><button onclick="gtnhap(8)">8</button></td>
+        <td><button onclick="gtnhap(9)">9</button></td>
+        <td><button onclick="gtnhap('/')"  style="background:dimgrey">/</button></td>
+    </tr>
+    <tr>
+        <td><button onclick="gtnhap(4)">4</button></td>
+        <td><button onclick="gtnhap(5)">5</button></td>
+        <td><button onclick="gtnhap(6)">6</button></td>
+        <td><button onclick="gtnhap('*')"  style="background:dimgrey">x</button></td>
+    </tr>
+    <tr>
+        <td><button onclick="gtnhap(1)">1</button></td>
+        <td><button onclick="gtnhap(2)">2</button></td>
+        <td><button onclick="gtnhap(3)">3</button></td>
+        <td><button onclick="gtnhap('-')"  style="background:dimgrey">-</button></td>
+    </tr>
+    <tr>
+        <td><button onclick="gtnhap(0)">0</button></td>
+        <td><button onclick="gtnhap('.')">.</button></td>
+        <td><button onclick="tinhkpua('=')"  style="background:blue; color: white">=</button></td>
+        <td><button onclick="gtnhap('+')"  style="background:dimgrey">+</button></td>
+    </tr>
+
+</table>
+
+<script>
+
+function gtnhap(kitu)
+{
+    document.getElementById('dat').value += kitu;
+}
+//tinh kết quả ham eval
+function tinhkpua()
+{
+
+    let tinh= document.getElementById('dat').value;
+    document.getElementById('dat').value = eval(tinh);
+}
+//lầm mới cho khoảng trắng
+function lammoi()
+{
+    document.getElementById('dat').value = "";
+}
+</script>
+</body>
+</html>
